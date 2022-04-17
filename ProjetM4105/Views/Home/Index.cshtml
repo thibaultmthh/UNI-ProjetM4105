@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Les restaurants";
+}
+
+
+
+<div class="row">
+    <h1>Our Places </h1>
+    <div id="CategoryMenu" style="text-align: center">
+        <article style="display: flex; margin: 20px ">
+
+            <img src="https://pokawa.com/storage/2021/10/la-valentine.png" alt="chalet Alpage" style="width: 450px; margin-right: 30px" />
+            <div>
+                <h3>@Html.ActionLink("Pokawa Grenoble", "Base", "Category")</h3>
+                <p><span>Address : </span>1 bis rue docteur Bally, 38000 Grenoble</p>
+                <p><span>Phone : </span> <a href="tel:+33568955665">+33 5 65 45 56 84</a> </p>
+            </div>
+
+
+
+        </article>
+
+        <article style="display: flex; margin: 20px ">
+            <img src="https://pokawa.com/storage/2021/09/Sables-dolonnee.png" alt="chalet 2 lacs" style="width: 450px; margin-right: 30px" />
+            <div>
+                <h3>@Html.ActionLink("Pokawa Lyon Mercière", "Base", "Category")</h3>
+                <p><span>Address : </span>4 rue Grenette, 69002 Lyon</p>
+                <p><span>Phone : </span> <a href="tel:+33568955665">+33 5 65 45 56 84</a> </p>
+            </div>
+
+
+        </article>
+
+
+    </div>
+</div>

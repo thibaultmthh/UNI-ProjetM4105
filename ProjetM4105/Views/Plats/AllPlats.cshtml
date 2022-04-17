@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProjetM4105.Data.Models.Plats>
+
+@{
+    ViewBag.Title = "AllPlats";
+}
+
+<h2>AllPlats</h2>
+<table style="border-collapse: separate; border-spacing: 1em;">
+    <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+        <td><strong>Price</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+               @item.PlatName
+            </td>
+            <td>
+               @item.Description
+            </td>
+            <td>
+                @item.UnitPrice
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PlatID }, new { @class = "btn btn-primary" }) 
+               
+            </td>
+            <td>
+                @Html.ActionLink("Details", "PlatsDetails", new { id = item.PlatID }, new { @class = "btn btn-primary" }) 
+               
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.PlatID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+</table>
+<p class="button">
+    @Html.ActionLink("Create New", "Create",new { } ,  new { @class = "btn btn-primary", style = "margin-top: 10px" })
+</p>

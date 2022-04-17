@@ -1,0 +1,22 @@
+﻿@model ProjetM4105.Data.Models.Plats
+@{
+    ViewBag.Title = "PlatsDetails";
+}
+
+<h2>Details Plats </h2>
+
+<div>
+    <h4>@Model.PlatName</h4>
+    <hr />
+
+    <div>
+        <img src="@Url.Content(Model.ImagePath)" alt="@Model.PlatName" height="160px" width="160px" />
+        <div>
+            <p><strong>Name : </strong> @Model.PlatName</p>
+            <p><strong>Price :</strong> @Model.UnitPrice</p>
+            <p>@Model.Description</p>
+            @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.PlatID }, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+  
+</div>

@@ -1,0 +1,42 @@
+﻿@using ProjetM4105.Data.Models;
+@model ProjetM4105.Models.DishCategory
+@{
+    ViewBag.Title = @Model.Name;
+}
+
+<h2>@Model.Name</h2>
+
+<section>
+    <div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Entrées", "ListPlats", "Plats", new { id = ((int)Category.Entree)}, null)</li>
+                <li>@Html.ActionLink("Plats", "ListPlats", "Plats", new { id = ((int)Category.Plat) }, null)</li>
+                <li>@Html.ActionLink("Boissons", "ListPlats", "Plats", new { id = ((int)Category.Boisson) }, null)</li>
+                <li>@Html.ActionLink("Desserts", "ListPlats", "Plats", new { id = ((int)Category.Dessert) }, null)</li>
+            </ul>
+        </div>
+        <div style="display: flex; " class="border border-light">
+            @foreach (var dish in Model.Dishes)
+            {
+                <div style="border: solid 1px grey; margin: 5px; padding: 10px">
+                    <h4 class="panel-heading" style="text-align: center">@dish.PlatID : @dish.PlatName</h4>
+                    <a href="/Plats/PlatsDetails/@dish.PlatID" style="display: flex; justify-content: center">
+
+                        <img src="@Url.Content(dish.ImagePath)" alt="@dish.Description" width="140px" />
+                    </a>
+
+                    <div class="panel-body text-primary" style="text-align: right">
+                        Prix : @dish.UnitPrice €
+                    </div>
+                    <p>@Html.ActionLink("Details", "PlatsDetails", new { id = dish.PlatID }) </p>
+                    <div style="justify-content: center; display: flex">
+                        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = dish.PlatID }, new { @class = "btn btn-primary" })
+                    </div>
+
+
+                </div>
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+﻿@using ProjetM4105.Data.Models;
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>Categories</h2>
+<div id="CategoryMenu" style="text-align: center; display: flex; flex-wrap: wrap;">
+    <article>
+        <img src="@Url.Content("~/Content/Images/entree.jpg")" alt="une entrée" style="width: 200px" />
+        <h3>@Html.ActionLink("Entrées", "ListPlats", "Plats", new { id = ((int)Category.Entree) }, null)</h3>
+
+    </article>
+
+    <article>
+        <img src="@Url.Content("~/Content/Images/plat.jpg")" alt="un plat" style="width: 200px" />
+        <h3>@Html.ActionLink("Plats", "ListPlats", "Plats", new { id = ((int)Category.Plat) }, null)</h3>
+
+    </article>
+
+    <article>
+        <img src="@Url.Content("~/Content/Images/dessert.jpg")" alt="un dessert" style="width: 200px" />
+        <h3>@Html.ActionLink("Desserts", "ListPlats", "Plats", new { id = ((int)Category.Dessert) }, null)</h3>
+    </article>
+
+    <article>
+        <img src="@Url.Content("~/Content/Images/boisson.png")" alt="une langouste"  style="width: 200px" />
+        <h3>@Html.ActionLink("boisson", "ListPlats", "Plats", new { id = ((int)Category.Boisson) }, null)</h3>
+    </article>
+</div>
